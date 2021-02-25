@@ -1,2 +1,7 @@
 ﻿  main.cpp
+C:\Users\Вадим\source\repos\3.1_4sem\3.1_4sem\main.cpp(54,39): warning C4244: аргумент: преобразование "double" в "_Ty", возможна потеря данных
+          with
+          [
+              _Ty=int
+          ]
   3.1_4sem.vcxproj -> C:\Users\Вадим\source\repos\3.1_4sem\Debug\3.1_4sem.exe

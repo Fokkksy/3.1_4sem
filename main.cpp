@@ -4,8 +4,9 @@
 #include <array>
 #include <chrono>
 #include <algorithm>
+#include <random>
 
-const int N = 10000;
+const int N = 100000;
 
 using namespace std;
 
@@ -38,14 +39,11 @@ private:
 	bool no_pause_before_end = false;
 };
 
-unsigned int PRNG()
-{
-    static unsigned int seed = 4541;
-    seed = (8253729 * seed + 2396403);
-    return seed % 32768;
-}
 
 int main(){
+
+	std::default_random_engine dre;
+	std::uniform_real_distribution<double> myrandom(0, 100);
 
     std::set<int> set_element;
     std::vector<int> v_generated(0);
@@ -53,7 +51,7 @@ int main(){
 	std::array<int, N> arr;
 
     for (int count = 0; count < N; ++count) {
-        v_generated.push_back(PRNG());
+        v_generated.push_back(myrandom(dre));
     }
 	cout << "SET_TIME: ";
 	{Timer time;
